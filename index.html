@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Expenses chart component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header__content">
+          <small>My balance</small>
+          <h4>$921.48</h4>
+        </div>
+        <div class="header__circle"></div>
+      </div>
+      <div class="expances-container">
+        <h3>Spending - Last 7 days</h3>
+        <ul>
+          <li id="mon">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>mon</p>
+          </li>
+          <li id="tue">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>tue</p>
+          </li>
+          <li id="wed" class="active">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>wed</p>
+          </li>
+          <li id="thu">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>thu</p>
+          </li>
+          <li id="fri">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>fri</p>
+          </li>
+          <li id="sat">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>sat</p>
+          </li>
+          <li id="sun">
+            <span class="amount"></span>
+            <div class="expence"></div>
+            <p>sun</p>
+          </li>
+        </ul>
+        <div class="total-sum">
+          <div class="total-sum__left">
+            <small>Total this month</small>
+            <h2>$478.33</h2>
+          </div>
+          <div class="total-sum__right">
+            <span>+2.4%</span>
+            <small>from last month</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

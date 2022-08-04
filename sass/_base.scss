@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+$color-primary-red: hsl(10, 79%, 65%);
+$color-primary-cyan: hsl(186, 34%, 60%);
+$color-neutral-brown-dark: hsl(25, 47%, 15%);
+$color-neutral-brown: hsl(28, 10%, 53%);
+$color-neutral-cream: hsl(27, 66%, 92%);
+$color-neutral-orange: hsl(33, 100%, 98%);
+$def-font: "DM Sans", sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $color-neutral-cream;
+  font-size: 1.4rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $def-font;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 40%;
+  // width: 100%;
+  & > * {
+    padding: 1.5rem 3rem;
+  }
+}
+.header {
+  background-color: $color-primary-red;
+  margin-bottom: 2rem;
+  color: $color-neutral-orange;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & small {
+    display: block;
+    margin-bottom: 1rem;
+    color: $color-neutral-cream;
+  }
+  & h4 {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  &__circle {
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-neutral-brown-dark;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 99%;
+      height: 99%;
+      border: 1px solid $color-neutral-orange;
+      border-radius: 50%;
+      transform: translateX(-2rem);
+    }
+  }
+}
+
+.expances-container {
+  background-color: $color-neutral-orange;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+
+  & h3 {
+    color: $color-neutral-brown-dark;
+    font-size: 3.2rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 4rem;
+  }
+
+  & ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 5rem;
+    min-height: 25rem;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      color: $color-neutral-brown;
+      position: relative;
+      width: 5rem;
+      margin-bottom: 3.4rem;
+      min-height: 20rem;
+      cursor: pointer;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      & .amount {
+        background-color: $color-neutral-brown-dark;
+        padding: 0.5rem 1rem;
+        border-radius: 2px;
+        margin-bottom: 0.5rem;
+        color: $color-neutral-orange;
+        font-size: 1.5rem;
+        opacity: 0;
+        transition: all 0.2s;
+
+        &.show {
+          opacity: 1;
+        }
+      }
+
+      &.active .expence {
+        background-color: $color-primary-cyan;
+      }
+      &.highest .expence {
+        height: 200px;
+      }
+      & .expence {
+        content: "";
+        display: block;
+        // position: absolute;
+        background-color: $color-primary-red;
+        width: 110%;
+        height: 100px;
+        border-radius: 5px;
+      }
+      &:hover .expence {
+        opacity: 0.4;
+      }
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      background-color: $color-neutral-brown;
+      width: 100%;
+      height: 2px;
+      top: 100%;
+      opacity: 0.6;
+    }
+  }
+
+  & .total-sum {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+
+    & small {
+      color: $color-neutral-brown;
+      font-size: 1.4rem;
+      letter-spacing: 0.7px;
+    }
+
+    &__left {
+      h2 {
+        font-size: 3.5rem;
+        // font-weight: 400;
+      }
+    }
+    &__right {
+      display: flex;
+      flex-direction: column;
+
+      & span {
+        color: $color-neutral-brown-dark;
+        font-weight: 700;
+        margin-left: auto;
+      }
+    }
+  }
+}
